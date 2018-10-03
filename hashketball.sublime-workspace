@@ -1,0 +1,217 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "require \"pry\"\n\ndef game_hash\n{\n:home => {:team_name => \"Brooklyn Nets\", \n        :colors => [\"Black\", \"White\"], \n        :players => {\n\"Alan Anderson\" => {\n:number => 0, :shoe => 16, :points => 22, :rebounds => 12, :assists => 12, :steals => 3, :blocks => 1, :slam_dunks => 1},\n\n\"Reggie Evans\" => {\n:number => 30, :shoe => 14, :points => 12, :rebounds => 12, :assists => 12, :steals => 12, :blocks => 12, :slam_dunks => 7},\n\n\"Brook Lopez\" => {\n:number => 11, :shoe => 17, :points => 17, :rebounds => 19, :assists => 10, :steals => 3, :blocks => 1, :slam_dunks => 15},\n\n\"Mason Plumlee\" => {\n:number => 1, :shoe => 19, :points => 26, :rebounds => 12, :assists => 6, :steals => 3, :blocks => 8, :slam_dunks => 5},\n\n\"Jason Terry\" => {\n:number => 31, :shoe => 15, :points => 19, :rebounds => 2, :assists => 2, :steals => 4, :blocks => 11, :slam_dunks => 1}\n }\n},\n\naway: {:team_name => \"Charlotte Hornets\", \n       :colors => [\"Turquoise\", \"Purple\"], \n       :players => {\n\"Jeff Adrien\" => {\n:number => 4, :shoe => 18, :points => 10, :rebounds => 1, :assists => 1, :steals => 2, :blocks => 7, :slam_dunks => 2},\n\n\"Bismak Biyombo\" => {\n:number => 0, :shoe => 16, :points => 12, :rebounds => 4, :assists => 7, :steals => 7, :blocks => 15, :slam_dunks => 10},\n\n\"Desagna Diop\" => {\n:number => 2, :shoe => 14, :points => 24, :rebounds => 12, :assists => 12, :steals => 4, :blocks => 5, :slam_dunks => 5},\n\n\"Ben Gordon\" => {\n:number => 8, :shoe => 15, :points => 33, :rebounds => 3 , :assists => 2, :steals => 1, :blocks => 1, :slam_dunks => 0},\n\n\"Brendan Haywood\" => {\n:number => 33, :shoe => 15, :points => 6, :rebounds => 12, :assists => 12, :steals => 22, :blocks => 5, :slam_dunks => 12}\n  }\n }\n}\nend\n\n\n\n#return number of points scored for specific player\n#location = home or away\n\t#team_data = team name, colors, players\n#team data specifying players\n\t#name = player \n\t#specs = number, shoe, points, rebounds, assi ssts, steals, \t\tblocks, slam dunks keys\n\ndef num_points_scored(players_name)\n game_hash.each do |location, team_data|\t\n  team_data[:players].each do |attribute, data|\n   if attribute == players_name\nbinding.pry\n   return data[:points]\n   end \n  end\n end\nend\nnum_points_scored(\"Desagna Diop\")\n\n\ndef shoe_size(players_name)\ngame_hash.each do |location, team_data|\nteam_data[:players].each do |attribute, data|\nif attribute == players_name\nreturn data[:shoe]\nend\nend\nend\nend\n\ndef team_colors(team_name)#didit!\ngame_hash.each do |location, team_data|\nif team_data[:team_name] == team_name\nreturn team_data[:colors]\nend\nend\nend\n\n#said to 'operate' on\n\ndef team_names#didit!\ngame_hash.map do |location, team_data|\nteam_data[:team_name]\nend\nend\n\n\ndef player_numbers(team_name)#didit!\njersey_numbers = []\ngame_hash.each do |location, team_data|\nif game_hash[location].values.include?(team_name)\nteam_data.each do |attribute, data|\nif data.class == Hash\ndata.each do |data_item, stat|\nstat.each do |jers, num|\nif jers == :number\njersey_numbers.push(num.to_i)\nend\nend\nend\nend\nend\nend\nend\nreturn jersey_numbers\nend\n\n\ndef player_stats(player_name)\ngame_hash.each do |location, team_data|\nteam_data.each do |attribute, data|\nif attribute == player_name\ndata.each do \nend\nend \nend\nend\nend\n\n\ndef big_shoe_rebounds#didit!\nbiggest_shoes = \"\"\nshoe_size = 0\ngame_hash.each do |location, team_data|\nteam_data.each do |attributes, data|\nif data.class == Hash\ndata.each do |data_item, stat|\nstat.each do |shoe, num|\nif shoe == :shoe\nif num > shoe_size\nshoe_size = num\nbiggest_shoes = data_item\nend\nend\nend\nend \nreturn game_hash[location][attributes][biggest_shoes][:rebounds]\nend\nend\nend\nend\n",
+			"settings":
+			{
+				"buffer_size": 3579,
+				"line_ending": "Unix",
+				"name": "require \"pry\""
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/marissa/Development/html_labs/html-album-cover-dc-web-100818/SOURCE.md",
+		"/home/marissa/Development/projs/exceptional-realty/real-estate-listings.html",
+		"/home/marissa/Development/projs/exceptional-realty/new-properties.html",
+		"/home/marissa/Development/projs/exceptional-realty/market-report.html",
+		"/home/marissa/Development/projs/exceptional-realty/images/Screenshot_2018-10-02 Jonathan Grover - Artist(2).png",
+		"/home/marissa/Development/projs/exceptional-realty/contact.html",
+		"/home/marissa/Development/projs/exceptional-realty/index.html",
+		"/home/marissa/Development/HTML projs/exceptional-realty/README.md",
+		"/home/marissa/Development/HTML projs/exceptional-realty/.gitignore"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1695,
+								1695
+							]
+						],
+						"settings":
+						{
+							"auto_name": "require \"pry\"",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 663.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "hashketball.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
