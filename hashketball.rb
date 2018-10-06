@@ -127,19 +127,17 @@ end
 
 def num_points_scored(playa)
  game_hash.collect do |location, data|
-   players = data[:players]
-   players.collect do |x|
-    if playa == x[:player]
-      return x[:points]
-    end
+    data[:players].collect do |x|
+      if playa == x[:player]
+        return x[:points]
   end
-   end
-  end
+end
+end
+end
 
 def shoe_size(playa)
   game_hash.collect do |location, data|
-    players = data[:players]
-    players.collect do |x|
+    data[:players].collect do |x|
       if playa == x[:player]
         return x[:shoe]
     end
@@ -165,8 +163,7 @@ def player_numbers(team)
   new = []
   game_hash.collect do |location, data|
   if team == data[:team_name]
-    team_p = data[:players]
-    team_p.each do |x|
+    data[:players].each do |x|
      new << x[:number]
   end
  end
@@ -176,8 +173,7 @@ end
 
 def player_stats(playa)
   game_hash.collect do |location, data|
-  players = data[:players]
-  players.collect do |x|
+  data[:players].collect do |x|
     if playa == x[:player]
        x.delete(:player)
        return x
@@ -190,8 +186,7 @@ def big_shoe_rebounds
   biggest_shoes = 0
   rebounds = 0
   game_hash.each do |location, data|
-    players = data[:players]
-    players.each do |x|
+    data[:players].each do |x|
       if x[:shoe] > biggest_shoes
         biggest_shoes = x[:shoe]
         rebounds = x[:rebounds]
